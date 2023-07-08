@@ -7,17 +7,34 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.chutyrooms.mynotes.HomeFragment"
+        android:name="com.chutyrooms.mynotes.view.ui.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_newNoteFragment"
+            app:destination="@id/newNoteFragment"
+            app:popUpTo="@id/newNoteFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_homeFragment_to_updateNoteFragment"
+            app:destination="@id/updateNoteFragment" />
+    </fragment>
     <fragment
         android:id="@+id/newNoteFragment"
-        android:name="com.chutyrooms.mynotes.NewNoteFragment"
+        android:name="com.chutyrooms.mynotes.view.ui.NewNoteFragment"
         android:label="fragment_new_note"
-        tools:layout="@layout/fragment_new_note" />
+        tools:layout="@layout/fragment_new_note" >
+        <action
+            android:id="@+id/action_newNoteFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
     <fragment
         android:id="@+id/updateNoteFragment"
-        android:name="com.chutyrooms.mynotes.UpdateNoteFragment"
+        android:name="com.chutyrooms.mynotes.view.ui.UpdateNoteFragment"
         android:label="fragment_update_note"
-        tools:layout="@layout/fragment_update_note" />
+        tools:layout="@layout/fragment_update_note" >
+        <action
+            android:id="@+id/action_updateNoteFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
 </navigation>
