@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var navController: NavController
     private lateinit var navHostFragment: NavHostFragment
-    var viewModel: NoteViewModel?=null
+    lateinit var noteViewModel: NoteViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //setContentView(R.layout.activity_main)
@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
 
         val newsRepository= NoteRepo(getDatabase(this))
         val viewModelProviderFactory=NoteViewModelFactory(newsRepository)
-        viewModel= ViewModelProvider(this,viewModelProviderFactory)[NoteViewModel::class.java]
+        noteViewModel= ViewModelProvider(this,viewModelProviderFactory)[NoteViewModel::class.java]
 
         navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
         navController = navHostFragment.navController
