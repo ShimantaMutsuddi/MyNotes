@@ -64,5 +64,5 @@ dependencies {
     // Navigation Components
     implementation 'androidx.navigation:navigation-fragment-ktx:2.6.0'
     implementation 'androidx.navigation:navigation-ui-ktx:2.6.0'
-    implementation 'androidx.navigation:navigation-dynamic-features-fragment:2.6.0'
+
 }
